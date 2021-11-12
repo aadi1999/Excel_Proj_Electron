@@ -3,7 +3,7 @@ const $ = require("jquery")
 $("document").ready(function(){
     // a click event is attached on element with cell class
     let db;
-
+    let lsc; // last selected cell
     $(".cell").on("click", function(){
         console.log(this);
         let rowId = Number($(this).attr("rowid"));
@@ -18,6 +18,7 @@ $("document").ready(function(){
 
     $(".cell").on("blur", function(){
             // console.log(this);
+            lsc = this;
             console.log("blur event fired");
             let val =  $(this).text();
             let rowId = Number($(this).attr("rowid"));
